@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "models",
+  "info": {
+    "singularName": "model",
+    "pluralName": "models",
+    "displayName": "Model"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "brand": { "type": "relation", "relation": "manyToOne", "target": "api::brand.brand", "inversedBy": "models" },
+    "products": { "type": "relation", "relation": "oneToMany", "target": "api::product.product" },
+    "compatible_products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" }
+  }
+}
